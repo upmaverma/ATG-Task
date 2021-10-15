@@ -50,14 +50,13 @@ nav {
   height: 100%;
   z-index: 10;
 }
-.show-loginContainer {
-  display: block;
-}
+
 .login {
-  position: relative;
-  margin: 11.625rem auto;
-  width: 46rem;
-  height: auto;
+  position: fixed;
+  left: 1%;
+  right: 1%;
+  margin: 2.5rem auto;
+  height: 85vh;
   background: #ffffff;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
@@ -72,7 +71,7 @@ nav {
 }
 .heading {
   height: 3.1rem;
-  padding: 1.03rem 3.6rem;
+  padding: 1.03rem 3rem;
   font-weight: 500;
   font-size: 14px;
   background: #effff4;
@@ -142,9 +141,10 @@ form .input-group input[type="password"] {
 }
 
 .login-2 {
-  position: relative;
-  margin: 11.625rem auto;
-  width: 46rem;
+  position: fixed;
+  left: 3%;
+  right: 3%;
+  margin: 3.5rem auto;
   height: auto;
   background: #ffffff;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
@@ -159,15 +159,24 @@ form .input-group input[type="password"] {
 header {
   position: relative;
   width: 100%;
-  height: 442px;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
-    url("./images/bg.png");
+  height: 100%;
   color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
 }
+
+header img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: fill;
+  object-position: center;
+  opacity: 0.45;
+}
+
 header div {
   position: absolute;
   bottom: 2rem;
@@ -433,17 +442,42 @@ main .andriod-tabs {
   border-bottom: 1px solid black;
 }
 /* -------------------------------main styling ends----------------- */
-
+@media screen and (min-width: 1200px) {
+  header div {
+    bottom: 4rem;
+    left: 11rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  header div {
+    bottom: 3rem;
+    left: 9rem;
+  }
+  .login {
+    width: 46rem;
+  }
+  .login-2 {
+    width: 46rem;
+    left: 8%;
+    right: 8%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .login {
+    left: 5%;
+    right: 5%;
+  }
+  .login-2 {
+    left: 5%;
+    right: 5%;
+  }
+}
 @media screen and (min-width: 768px) {
   nav .input-group {
     width: 40%;
   }
   nav {
     display: flex;
-  }
-  header div {
-    bottom: 5rem;
-    left: 12.5rem;
   }
 
   .menu {
@@ -453,6 +487,10 @@ main .andriod-tabs {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .show-loginContainer {
+    display: block;
   }
 }
 
